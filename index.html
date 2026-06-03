@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeJarvis | 家庭賈維斯 MVP Demo</title>
+  <style>
+    :root {
+      --bg: #071416;
+      --panel: #102326;
+      --panel-2: #142d31;
+      --text: #eef9f8;
+      --muted: #9bb9b8;
+      --line: rgba(255,255,255,.12);
+      --brand: #42e6b1;
+      --brand-2: #4cc9f0;
+      --warn: #ffd166;
+      --danger: #ff6b6b;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(66,230,177,.18), transparent 32rem),
+        radial-gradient(circle at top right, rgba(76,201,240,.14), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1160px, calc(100% - 36px)); margin: 0 auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(7,20,22,.78);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: .3px; }
+    .brand-mark {
+      width: 38px; height: 38px; border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #052020; font-weight: 900;
+      box-shadow: 0 8px 30px rgba(66,230,177,.25);
+    }
+    .nav-links { display: flex; gap: 16px; color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--brand); }
+
+    .hero { padding: 74px 0 42px; }
+    .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 32px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 12px; border: 1px solid rgba(66,230,177,.28);
+      border-radius: 999px; color: var(--brand);
+      background: rgba(66,230,177,.08); font-size: 14px;
+    }
+    h1 { font-size: clamp(38px, 7vw, 76px); line-height: 1.04; margin: 18px 0 18px; letter-spacing: -2.8px; }
+    .lead { max-width: 720px; color: var(--muted); font-size: 18px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .btn {
+      border: 0; cursor: pointer; border-radius: 15px;
+      padding: 13px 18px; font-weight: 900;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #05191c;
+      box-shadow: 0 12px 34px rgba(66,230,177,.20);
+    }
+    .btn.secondary { background: rgba(255,255,255,.06); color: var(--text); border: 1px solid var(--line); box-shadow: none; }
+    .btn.small { padding: 10px 13px; border-radius: 12px; font-size: 13px; }
+
+    .phone {
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 34px; padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+    }
+    .phone-screen {
+      min-height: 520px; border-radius: 26px; padding: 20px;
+      background: #071113; border: 1px solid rgba(255,255,255,.08);
+    }
+    .status-row { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .status-row span { color: var(--muted); }
+    .pill { display: inline-flex; gap: 8px; align-items: center; color: var(--brand); font-weight: 800; }
+    .dot { width: 10px; height: 10px; border-radius: 99px; background: var(--brand); box-shadow: 0 0 18px var(--brand); }
+
+    section { padding: 52px 0; }
+    .section-head { margin-bottom: 22px; }
+    .section-head h2 { font-size: clamp(28px, 4vw, 44px); margin: 0 0 8px; letter-spacing: -1px; }
+    .section-head p { margin: 0; color: var(--muted); max-width: 820px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
+      border: 1px solid var(--line); border-radius: var(--radius); padding: 22px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.18);
+    }
+    .card h3 { margin: 0 0 8px; font-size: 20px; }
+    .card p, .card li { color: var(--muted); }
+    .card ul { padding-left: 20px; margin-bottom: 0; }
+    .metric { font-size: 32px; font-weight: 950; color: var(--brand); line-height: 1.1; }
+    .tag { display: inline-block; padding: 4px 9px; border-radius: 999px; background: rgba(76,201,240,.10); color: #9ee8ff; border: 1px solid rgba(76,201,240,.20); font-size: 13px; }
+
+    .demo-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 16px; }
+    .scene-buttons { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin: 14px 0; }
+    .scene {
+      text-align: left; background: var(--panel-2); border: 1px solid var(--line);
+      color: var(--text); border-radius: 16px; padding: 14px; cursor: pointer;
+    }
+    .scene:hover { border-color: rgba(66,230,177,.55); transform: translateY(-1px); }
+    .command { display: flex; gap: 10px; margin-top: 14px; }
+    input, textarea, select {
+      width: 100%; border: 1px solid var(--line); background: rgba(0,0,0,.22);
+      color: var(--text); border-radius: 14px; padding: 13px 14px;
+      font: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .log {
+      margin-top: 14px; min-height: 170px; padding: 15px; border-radius: 16px;
+      background: #061012; color: #b7fff0; border: 1px solid rgba(66,230,177,.18);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px;
+      white-space: pre-wrap;
+    }
+    .device-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .device { background: rgba(0,0,0,.20); border: 1px solid var(--line); border-radius: 18px; padding: 15px; }
+    .device-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .device strong { font-size: 16px; }
+    .device-state { color: var(--brand); font-weight: 900; }
+    .bar { height: 8px; border-radius: 999px; background: rgba(255,255,255,.10); margin-top: 12px; overflow: hidden; }
+    .bar i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--brand), var(--brand-2)); width: 50%; transition: width .25s ease; }
+
+    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; }
+    th, td { text-align: left; padding: 15px; border-bottom: 1px solid rgba(255,255,255,.08); vertical-align: top; }
+    th { color: var(--brand); background: rgba(66,230,177,.08); }
+    td { color: var(--muted); background: rgba(255,255,255,.035); }
+    td strong { color: var(--text); }
+
+    .price-result { font-size: 38px; line-height: 1.1; font-weight: 950; color: var(--brand); margin: 10px 0; }
+    .footer { padding: 34px 0; border-top: 1px solid var(--line); color: var(--muted); text-align: center; }
+
+    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .form-grid textarea { grid-column: 1 / -1; }
+    .notice { color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .demo-grid, .grid-2 { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .device-grid, .scene-buttons, .form-grid { grid-template-columns: 1fr; }
+      .phone-screen { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark">HJ</span><span>HomeJarvis</span></a>
+      <div class="nav-links">
+        <a href="#pain">痛點</a>
+        <a href="#demo">MVP Demo</a>
+        <a href="#market">市場分析</a>
+        <a href="#business">商業模式</a>
+        <a href="#contact">預約體驗</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> 第八組 AI 商業創新專題｜智慧管家 2.0</span>
+          <h1>不是你控制家，<br>而是家開始懂你。</h1>
+          <p class="lead">HomeJarvis 是面向中產家庭的 AI 家庭賈維斯系統。它把既有家電、智慧設備與家庭情境整合成一個可以用自然語言溝通的代理中樞，降低智慧家庭建置成本，並強化隱私與自動化體驗。</p>
+          <div class="hero-actions">
+            <a class="btn" href="#demo">體驗互動 Demo</a>
+            <a class="btn secondary" href="#business">查看盈利模式</a>
+          </div>
+        </div>
+        <div class="phone" aria-label="HomeJarvis app preview">
+          <div class="phone-screen">
+            <div class="pill"><span class="dot"></span><span id="modeName">日常模式</span></div>
+            <h2 style="margin:18px 0 6px;">AI 家庭中控台</h2>
+            <p style="color:var(--muted);margin-top:0;">即時理解家庭狀態，代理執行多步驟任務。</p>
+            <div class="status-row"><span>燈光</span><strong id="miniLight">客廳 70%</strong></div>
+            <div class="status-row"><span>冷氣</span><strong id="miniAc">26°C</strong></div>
+            <div class="status-row"><span>門鎖</span><strong id="miniLock">已上鎖</strong></div>
+            <div class="status-row"><span>安全</span><strong id="miniSecurity">一般監測</strong></div>
+            <div class="status-row"><span>節能分數</span><strong id="miniEnergy">78 / 100</strong></div>
+            <div style="margin-top:22px;padding:15px;border-radius:18px;background:rgba(66,230,177,.08);border:1px solid rgba(66,230,177,.18);">
+              <strong>範例語音：</strong><br>
+              <span style="color:var(--muted);">「我等等要睡了，幫我關燈、確認門窗，冷氣調成睡覺舒服一點。」</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pain">
+      <div class="container">
+        <div class="section-head">
+          <h2>從痛點出發：智慧家庭不該只是一堆 App</h2>
+          <p>中產家庭想要智慧化，但常遇到建置太貴、品牌分散、設定複雜、無法自然溝通，也不能真正代理流程。</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><span class="tag">Pain 01</span><h3>全屋建置成本高</h3><p>傳統弱電或客製化智慧家庭工程費用高，對一般家庭而言不容易負擔。</p></div>
+          <div class="card"><span class="tag">Pain 02</span><h3>設備分散難整合</h3><p>燈光、冷氣、窗簾、門鎖、感測器可能分屬不同品牌，使用者必須在多個 App 之間切換。</p></div>
+          <div class="card"><span class="tag">Pain 03</span><h3>不能理解自然語言</h3><p>多數系統只能執行單一指令，不能像管家一樣理解「我要睡了」「我出門了」背後的連續任務。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution">
+      <div class="container">
+        <div class="section-head">
+          <h2>解決方案：低成本家庭 AI 代理中樞</h2>
+          <p>HomeJarvis 以 Mini PC 或家庭中控主機為核心，串接智慧設備與傳統家電，透過自然語言與情境自動化讓家真正「理解需求」。</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><h3>產品與服務</h3><ul><li>HomeJarvis 中控主機</li><li>語音 / 網頁互動介面</li><li>Zigbee、Matter、紅外線家電整合</li><li>AI 會員情境代理服務</li></ul></div>
+          <div class="card"><h3>價值創造</h3><ul><li>一句話完成多步驟家庭流程</li><li>保留現有家電，降低改裝成本</li><li>本地 AI 優先，降低隱私疑慮</li><li>從單點控制升級成家庭代理</li></ul></div>
+          <div class="card"><h3>目標客群</h3><ul><li>中產家庭</li><li>新成屋或租屋族</li><li>想升級智慧家庭但不想大裝修的人</li><li>重視安全、便利、節能與隱私的家庭</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo">
+      <div class="container">
+        <div class="section-head">
+          <h2>MVP 互動展示</h2>
+          <p>此網站展示最小可行性模型：使用者可透過情境按鈕或自然語言，模擬 AI 代理控制家庭設備。</p>
+        </div>
+        <div class="demo-grid">
+          <div class="card">
+            <h3>情境控制</h3>
+            <div class="scene-buttons">
+              <button class="scene" onclick="runScene('home')">🏠 我回家了<br><small>開燈、調溫、解除離家模式</small></button>
+              <button class="scene" onclick="runScene('sleep')">🌙 我要睡了<br><small>關燈、上鎖、夜間監測</small></button>
+              <button class="scene" onclick="runScene('out')">🚪 我出門了<br><small>關閉設備、啟動警戒</small></button>
+              <button class="scene" onclick="runScene('save')">⚡ 省電模式<br><small>降低耗電、維持舒適</small></button>
+            </div>
+            <h3 style="margin-top:20px;">自然語言輸入</h3>
+            <div class="command">
+              <input id="commandInput" placeholder="例如：客人來了，幫我把客廳調舒服一點" />
+              <button class="btn small" onclick="runCommand()">送出</button>
+            </div>
+            <div class="log" id="aiLog">系統待命中...
+請選擇情境，或輸入一句家庭需求。</div>
+          </div>
+          <div class="card">
+            <h3>設備狀態面板</h3>
+            <div class="device-grid">
+              <div class="device"><div class="device-top"><strong>燈光</strong><span id="lightState" class="device-state">客廳 70%</span></div><div class="bar"><i id="lightBar" style="width:70%"></i></div></div>
+              <div class="device"><div class="device-top"><strong>冷氣</strong><span id="acState" class="device-state">26°C 舒適</span></div><div class="bar"><i id="acBar" style="width:60%"></i></div></div>
+              <div class="device"><div class="device-top"><strong>窗簾</strong><span id="curtainState" class="device-state">半開</span></div><div class="bar"><i id="curtainBar" style="width:50%"></i></div></div>
+              <div class="device"><div class="device-top"><strong>門鎖</strong><span id="lockState" class="device-state">已上鎖</span></div><div class="bar"><i id="lockBar" style="width:100%"></i></div></div>
+              <div class="device"><div class="device-top"><strong>安全模式</strong><span id="securityState" class="device-state">一般監測</span></div><div class="bar"><i id="securityBar" style="width:55%"></i></div></div>
+              <div class="device"><div class="device-top"><strong>節能策略</strong><span id="energyState" class="device-state">平衡</span></div><div class="bar"><i id="energyBar" style="width:78%"></i></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="market">
+      <div class="container">
+        <div class="section-head">
+          <h2>市場分析：差異化定位</h2>
+          <p>HomeJarvis 不只是智慧音箱或單一品牌 App，而是整合設備、理解語意、代理流程的家庭 AI 中樞。</p>
+        </div>
+        <div class="card" style="overflow:auto;">
+          <table>
+            <thead><tr><th>項目</th><th>小米 / HomeKit</th><th>Aqara / LifeSmart</th><th>傳統弱電工程</th><th>HomeJarvis</th></tr></thead>
+            <tbody>
+              <tr><td><strong>價格門檻</strong></td><td>單品低，但全屋整合分散</td><td>中高</td><td>高</td><td><strong>主機 + 會員，低成本切入</strong></td></tr>
+              <tr><td><strong>自然語言</strong></td><td>基礎語音控制</td><td>多為規則控制</td><td>依專案而定</td><td><strong>以 AI 對話理解家庭任務</strong></td></tr>
+              <tr><td><strong>代理流程</strong></td><td>需手動設定場景</td><td>需 App 規則</td><td>客製成本高</td><td><strong>一句話拆解多步驟流程</strong></td></tr>
+              <tr><td><strong>隱私安全</strong></td><td>多雲端服務</td><td>部分雲端</td><td>依系統商</td><td><strong>強調本地 AI 與家庭內網</strong></td></tr>
+              <tr><td><strong>核心定位</strong></td><td>品牌生態設備</td><td>智慧家庭套件</td><td>工程整合</td><td><strong>家庭 AI 管家代理</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="business">
+      <div class="container">
+        <div class="section-head">
+          <h2>商業模式與五年盈利假設</h2>
+          <p>基本假設：HomeJarvis 主機 NT$5,500 / 台，AI 會員 NT$200 / 月，搭配安裝服務與後續擴充形成持續收入。</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><p class="tag">Revenue 01</p><h3>硬體主機銷售</h3><div class="metric">NT$5,500</div><p>以中控主機作為低門檻入口，讓家庭先建立 AI 中樞。</p></div>
+          <div class="card"><p class="tag">Revenue 02</p><h3>AI 會員訂閱</h3><div class="metric">NT$200/月</div><p>提供自然語言、情境代理、家庭報告、遠端管理等持續服務。</p></div>
+          <div class="card"><p class="tag">Revenue 03</p><h3>安裝與客製化</h3><div class="metric">加值服務</div><p>依家庭設備數量與需求提供一次性整合與後續維護。</p></div>
+        </div>
+
+        <div class="grid-2" style="margin-top:16px;">
+          <div class="card">
+            <h3>費用估算器</h3>
+            <label>房間數</label>
+            <input id="rooms" type="number" min="1" value="3" oninput="calcPrice()">
+            <label>會員方案</label>
+            <select id="plan" onchange="calcPrice()">
+              <option value="2400">年繳 AI 會員 NT$2,400</option>
+              <option value="200">月繳 AI 會員 NT$200</option>
+            </select>
+            <label>安裝方案</label>
+            <select id="install" onchange="calcPrice()">
+              <option value="0">自行安裝</option>
+              <option value="2500">基礎安裝 NT$2,500</option>
+              <option value="6000">進階整合 NT$6,000</option>
+            </select>
+          </div>
+          <div class="card">
+            <h3>第一年估算費用</h3>
+            <div class="price-result" id="priceResult">NT$ 7,900</div>
+            <p id="priceDetail" class="notice">主機 5,500 + 會員 2,400 + 安裝 0</p>
+            <p class="notice">此估算器用來呈現商業模式邏輯，正式產品可依硬體成本、安裝複雜度與會員功能調整。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>預約體驗 / 需求蒐集</h2>
+          <p>這是 MVP 版本的名單蒐集表單。展示時可說明未來能串接 Google Sheet，作為早期市場驗證工具。</p>
+        </div>
+        <div class="card">
+          <div class="form-grid">
+            <input id="name" placeholder="姓名">
+            <input id="contactInfo" placeholder="聯絡方式">
+            <input id="homeType" placeholder="住宅類型，例如三房兩廳">
+            <input id="budget" placeholder="預算，例如 1 萬以內">
+            <textarea id="need" placeholder="最想自動化的家庭情境，例如睡前關燈、出門檢查門鎖、長輩照護提醒"></textarea>
+          </div>
+          <button class="btn" style="margin-top:14px;" onclick="submitLead()">送出需求</button>
+          <p id="formMessage" style="color:var(--brand);font-weight:900;"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">HomeJarvis｜第八組 智慧管家 2.0｜AI 商業創新專題 MVP</div>
+  </footer>
+
+  <script>
+    const scenes = {
+      home: {
+        mode: '回家模式', light: '玄關與客廳 85%', ac: '25°C 快速舒適', curtain: '打開', lock: '已解鎖', security: '家人模式', energy: '舒適優先',
+        bars: [85, 68, 90, 20, 45, 62],
+        log: '收到：我回家了\nAI 判斷：使用者進入家門，需要照明與舒適溫度。\n代理執行：開啟玄關燈與客廳燈、冷氣調整至 25°C、安全模式改為家人模式。'
+      },
+      sleep: {
+        mode: '睡眠模式', light: '臥室 20%', ac: '27°C 睡眠風', curtain: '關閉', lock: '已上鎖', security: '夜間監測', energy: '安靜省電',
+        bars: [20, 45, 0, 100, 88, 86],
+        log: '收到：我要睡了\nAI 判斷：需要降低干擾、確認安全、節省能源。\n代理執行：關閉客廳燈、臥室燈調暗、窗簾關閉、確認門鎖、啟動夜間監測。'
+      },
+      out: {
+        mode: '離家模式', light: '全部關閉', ac: '關閉', curtain: '關閉', lock: '已上鎖', security: '離家警戒', energy: '最大省電',
+        bars: [0, 0, 0, 100, 100, 96],
+        log: '收到：我出門了\nAI 判斷：家庭無人，需要安全與節能。\n代理執行：關閉非必要家電、確認門鎖、啟動離家警戒、保留必要感測器。'
+      },
+      save: {
+        mode: '省電模式', light: '必要照明 35%', ac: '28°C 節能', curtain: '依日照調整', lock: '已上鎖', security: '一般監測', energy: '省電優先',
+        bars: [35, 35, 60, 100, 60, 93],
+        log: '收到：省電模式\nAI 判斷：降低耗電但維持基本舒適。\n代理執行：燈光降至 35%、冷氣調整至 28°C、窗簾依日照調整。'
+      }
+    };
+
+    function setScene(data) {
+      document.getElementById('modeName').textContent = data.mode;
+      document.getElementById('lightState').textContent = data.light;
+      document.getElementById('acState').textContent = data.ac;
+      document.getElementById('curtainState').textContent = data.curtain;
+      document.getElementById('lockState').textContent = data.lock;
+      document.getElementById('securityState').textContent = data.security;
+      document.getElementById('energyState').textContent = data.energy;
+      document.getElementById('miniLight').textContent = data.light;
+      document.getElementById('miniAc').textContent = data.ac;
+      document.getElementById('miniLock').textContent = data.lock;
+      document.getElementById('miniSecurity').textContent = data.security;
+      document.getElementById('miniEnergy').textContent = data.bars[5] + ' / 100';
+      ['lightBar','acBar','curtainBar','lockBar','securityBar','energyBar'].forEach((id, i) => {
+        document.getElementById(id).style.width = data.bars[i] + '%';
+      });
+      document.getElementById('aiLog').textContent = data.log;
+    }
+    function runScene(name) { setScene(scenes[name]); }
+
+    function runCommand() {
+      const text = document.getElementById('commandInput').value.trim();
+      if (!text) {
+        document.getElementById('aiLog').textContent = '請先輸入一句自然語言指令。';
+        return;
+      }
+      if (/睡|晚安|休息/.test(text)) return runScene('sleep');
+      if (/出門|離開|上班|上課/.test(text)) return runScene('out');
+      if (/省電|電費|節能/.test(text)) return runScene('save');
+      if (/客人|朋友|聚會/.test(text)) {
+        setScene({
+          mode: '訪客模式', light: '客廳 90% 暖光', ac: '25°C 迎賓', curtain: '打開', lock: '已上鎖', security: '訪客模式', energy: '舒適優先',
+          bars: [90, 70, 90, 100, 55, 70],
+          log: '收到：' + text + '\nAI 拆解：偵測到「客人」與「氣氛」需求。\n代理執行：客廳暖光 90%、冷氣 25°C、窗簾打開、維持門鎖安全。'
+        });
+        return;
+      }
+      setScene({
+        mode: '自訂代理模式', light: '依需求調整', ac: '智慧調整', curtain: '智慧判斷', lock: '已檢查', security: '一般監測', energy: '平衡',
+        bars: [65, 60, 55, 100, 62, 75],
+        log: '收到：' + text + '\nAI 拆解：辨識使用者需求，轉換成家庭設備流程。\n代理執行：調整燈光、確認安全狀態、依舒適與節能平衡控制設備。'
+      });
+    }
+
+    function calcPrice() {
+      const rooms = Number(document.getElementById('rooms').value || 1);
+      const plan = Number(document.getElementById('plan').value);
+      const install = Number(document.getElementById('install').value);
+      const host = 5500;
+      const roomAddon = Math.max(0, rooms - 3) * 800;
+      const total = host + plan + install + roomAddon;
+      document.getElementById('priceResult').textContent = 'NT$ ' + total.toLocaleString('zh-TW');
+      document.getElementById('priceDetail').textContent = `主機 5,500 + 會員 ${plan.toLocaleString('zh-TW')} + 安裝 ${install.toLocaleString('zh-TW')} + 房間擴充 ${roomAddon.toLocaleString('zh-TW')}`;
+    }
+    function submitLead() {
+      const name = document.getElementById('name').value.trim() || '使用者';
+      document.getElementById('formMessage').textContent = `${name}，已模擬送出。正式版可串接 Google Sheet 收集名單。`;
+    }
+    calcPrice();
+  </script>
+</body>
+</html>
