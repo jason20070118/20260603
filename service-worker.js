@@ -1,4 +1,4 @@
-const CACHE_NAME = 'homejarvis-pwa-v4';
+const CACHE_NAME = 'homejarvis-pwa-v5';
 const ASSETS = [
   './',
   './index.html',
