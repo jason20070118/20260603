@@ -11,28 +11,28 @@
   <title>HomeJarvis App｜智慧管家 2.0</title>
   <style>
     :root{--bg:#071416;--card:#102326;--card2:#142d31;--text:#eef9f8;--muted:#9bb9b8;--line:rgba(255,255,255,.12);--brand:#42e6b1;--blue:#4cc9f0;--red:#ff6b6b;--yellow:#ffd166;--radius:22px;--shadow:0 18px 48px rgba(0,0,0,.32)}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;background:radial-gradient(circle at top left,rgba(66,230,177,.18),transparent 34rem),radial-gradient(circle at top right,rgba(76,201,240,.14),transparent 30rem),var(--bg);color:var(--text);line-height:1.65} button,input,select,textarea{font:inherit} .wrap{width:min(1160px,calc(100% - 32px));margin:auto}.nav{position:sticky;top:0;z-index:10;background:rgba(7,20,22,.82);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.navin{display:flex;justify-content:space-between;align-items:center;padding:12px 0}.logo{display:flex;align-items:center;gap:10px;font-weight:950}.mark{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--blue));color:#052020}.links{display:flex;gap:14px;color:var(--muted);font-size:14px}.links a{color:inherit;text-decoration:none}.links a:hover{color:var(--brand)}.hero{padding:42px 0 22px}.heroGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(66,230,177,.28);background:rgba(66,230,177,.08);color:var(--brand);border-radius:999px;padding:7px 11px;font-size:14px}h1{font-size:clamp(34px,6vw,66px);line-height:1.05;margin:16px 0;letter-spacing:-2px}.lead{color:var(--muted);font-size:18px;max-width:760px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--blue));color:#061718;font-weight:900;padding:12px 16px;cursor:pointer}.btn.secondary{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--text)}.btn.danger{background:rgba(255,107,107,.14);border:1px solid rgba(255,107,107,.32);color:#ffd1d1}.btn.small{padding:9px 12px;font-size:13px}.card{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}.phone{border-radius:32px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));padding:14px}.screen{min-height:480px;background:#061012;border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:18px}.pill{display:inline-flex;align-items:center;gap:8px;color:var(--brand);font-weight:900}.dot{width:10px;height:10px;border-radius:99px;background:var(--brand);box-shadow:0 0 18px var(--brand)}.status{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);padding:12px 0}.status span{color:var(--muted)}section{padding:34px 0}.head{margin-bottom:16px}.head h2{font-size:clamp(26px,4vw,40px);margin:0 0 8px}.head p{margin:0;color:var(--muted)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.sceneGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.scene{border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:16px;padding:13px;text-align:left;cursor:pointer}.scene:hover{border-color:var(--brand)}input,select,textarea{width:100%;border:1px solid var(--line);background:rgba(0,0,0,.23);color:var(--text);border-radius:14px;padding:12px;margin:7px 0 12px}textarea{min-height:90px;resize:vertical}.log{min-height:158px;border:1px solid rgba(66,230,177,.18);background:#061012;color:#b7fff0;border-radius:16px;padding:14px;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}.deviceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.device{background:rgba(0,0,0,.2);border:1px solid var(--line);border-radius:16px;padding:13px}.deviceTop{display:flex;justify-content:space-between;gap:10px}.state{color:var(--brand);font-weight:900}.bar{height:8px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--blue));width:50%;transition:.25s}.record{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(0,0,0,.18);margin-top:10px}.record b{color:var(--brand)}table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px}th,td{padding:12px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;vertical-align:top}th{color:var(--brand);background:rgba(66,230,177,.08)}td{color:var(--muted);background:rgba(255,255,255,.035)}.price{font-size:34px;font-weight:950;color:var(--brand);line-height:1.1}.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#061012;border:1px solid rgba(66,230,177,.35);color:var(--text);border-radius:999px;padding:10px 14px;box-shadow:var(--shadow);display:none;z-index:30}.footer{text-align:center;color:var(--muted);padding:28px 0;border-top:1px solid var(--line)}.subnav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(7,20,22,.92);border-top:1px solid var(--line);z-index:12}.subnav a{flex:1;text-align:center;padding:10px 4px;color:var(--muted);font-size:12px;text-decoration:none}.subnav a strong{display:block;color:var(--text);font-size:16px}@media(max-width:880px){.heroGrid,.grid2,.grid3{grid-template-columns:1fr}.links{display:none}.subnav{display:flex}.hero{padding-top:28px}.screen{min-height:auto}.sceneGrid,.deviceGrid{grid-template-columns:1fr}body{padding-bottom:58px}}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;background:radial-gradient(circle at top left,rgba(66,230,177,.18),transparent 34rem),radial-gradient(circle at top right,rgba(76,201,240,.14),transparent 30rem),var(--bg);color:var(--text);line-height:1.65} button,input,select,textarea{font:inherit} .wrap{width:min(1160px,calc(100% - 32px));margin:auto}.nav{position:sticky;top:0;z-index:10;background:rgba(7,20,22,.82);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.navin{display:flex;justify-content:space-between;align-items:center;padding:12px 0}.logo{display:flex;align-items:center;gap:10px;font-weight:950}.mark{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--blue));color:#052020}.links{display:flex;gap:14px;color:var(--muted);font-size:14px}.links a{color:inherit;text-decoration:none}.links a:hover{color:var(--brand)}.hero{padding:42px 0 22px}.heroGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(66,230,177,.28);background:rgba(66,230,177,.08);color:var(--brand);border-radius:999px;padding:7px 11px;font-size:14px}h1{font-size:clamp(34px,6vw,66px);line-height:1.05;margin:16px 0;letter-spacing:-2px}.lead{color:var(--muted);font-size:18px;max-width:760px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--blue));color:#061718;font-weight:900;padding:12px 16px;cursor:pointer}.btn.secondary{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--text)}.btn.danger{background:rgba(255,107,107,.14);border:1px solid rgba(255,107,107,.32);color:#ffd1d1}.btn.small{padding:9px 12px;font-size:13px}.card{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}.phone{border-radius:32px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));padding:14px}.screen{min-height:480px;background:#061012;border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:18px}.pill{display:inline-flex;align-items:center;gap:8px;color:var(--brand);font-weight:900}.dot{width:10px;height:10px;border-radius:99px;background:var(--brand);box-shadow:0 0 18px var(--brand)}.status{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);padding:12px 0}.status span{color:var(--muted)}section{padding:34px 0}.head{margin-bottom:16px}.head h2{font-size:clamp(26px,4vw,40px);margin:0 0 8px}.head p{margin:0;color:var(--muted)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.sceneGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.scene{border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:16px;padding:13px;text-align:left;cursor:pointer}.scene:hover{border-color:var(--brand)}input,select,textarea{width:100%;border:1px solid var(--line);background:rgba(0,0,0,.23);color:var(--text);border-radius:14px;padding:12px;margin:7px 0 12px}textarea{min-height:90px;resize:vertical}.log{min-height:158px;border:1px solid rgba(66,230,177,.18);background:#061012;color:#b7fff0;border-radius:16px;padding:14px;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}.deviceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.device{background:rgba(0,0,0,.2);border:1px solid var(--line);border-radius:16px;padding:13px}.deviceTop{display:flex;justify-content:space-between;gap:10px}.state{color:var(--brand);font-weight:900}.bar{height:8px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--blue));width:50%;transition:.25s}.record{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(0,0,0,.18);margin-top:10px}.record b{color:var(--brand)}table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px}th,td{padding:12px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;vertical-align:top}th{color:var(--brand);background:rgba(66,230,177,.08)}td{color:var(--muted);background:rgba(255,255,255,.035)}td b{color:var(--text)}.price{font-size:34px;font-weight:950;color:var(--brand);line-height:1.1}.planPrice{font-size:30px;font-weight:950;color:var(--brand);margin:8px 0}.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#061012;border:1px solid rgba(66,230,177,.35);color:var(--text);border-radius:999px;padding:10px 14px;box-shadow:var(--shadow);display:none;z-index:30}.footer{text-align:center;color:var(--muted);padding:28px 0;border-top:1px solid var(--line)}.subnav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(7,20,22,.92);border-top:1px solid var(--line);z-index:12}.subnav a{flex:1;text-align:center;padding:10px 4px;color:var(--muted);font-size:12px;text-decoration:none}.subnav a strong{display:block;color:var(--text);font-size:16px}.warn{color:var(--yellow);font-size:13px}.muted{color:var(--muted)}@media(max-width:880px){.heroGrid,.grid2,.grid3{grid-template-columns:1fr}.links{display:none}.subnav{display:flex}.hero{padding-top:28px}.screen{min-height:auto}.sceneGrid,.deviceGrid{grid-template-columns:1fr}body{padding-bottom:58px}}
   </style>
 </head>
 <body>
-  <nav class="nav"><div class="wrap navin"><div class="logo"><span class="mark">HJ</span><span>HomeJarvis App</span></div><div class="links"><a href="#dashboard">控制</a><a href="#leads">客戶</a><a href="#pricing">估價</a><a href="#market">市場</a></div></div></nav>
-  <div class="subnav"><a href="#dashboard"><strong>⌂</strong>控制</a><a href="#leads"><strong>＋</strong>客戶</a><a href="#pricing"><strong>$</strong>估價</a><a href="#market"><strong>◎</strong>市場</a></div>
+  <nav class="nav"><div class="wrap navin"><div class="logo"><span class="mark">HJ</span><span>HomeJarvis App</span></div><div class="links"><a href="#dashboard">控制</a><a href="#plans">方案</a><a href="#leads">客戶</a><a href="#pricing">估價</a><a href="#market">市場</a></div></div></nav>
+  <div class="subnav"><a href="#dashboard"><strong>⌂</strong>控制</a><a href="#plans"><strong>□</strong>方案</a><a href="#leads"><strong>＋</strong>客戶</a><a href="#pricing"><strong>$</strong>估價</a><a href="#market"><strong>◎</strong>市場</a></div>
   <header class="hero wrap">
     <div class="heroGrid">
       <div class="card">
         <span class="badge"><span class="dot"></span> 可安裝 PWA 版本｜第八組智慧管家 2.0</span>
-        <h1>可以點網址開，也可以安裝成 App。</h1>
-        <p class="lead">這版已從展示網站升級成可用的 PWA：可離線開啟、可在手機加入主畫面、可操作智慧家庭情境、可保存客戶需求、可匯出 CSV，適合拿來報告與 Demo。</p>
+        <h1>舊家電不用全換，也能變成 AI 智慧家庭。</h1>
+        <p class="lead">HomeJarvis 以低成本中樞大腦、邊端改造模組與 AI 秘書訂閱，把舊冷氣、電動窗簾、循環扇、熱水器與手機 GPS 串成可自動判斷的家庭代理系統。</p>
         <div class="actions"><button class="btn" id="installBtn" hidden>安裝 App</button><a class="btn secondary" href="#dashboard">開始使用</a><button class="btn secondary" onclick="resetDemo()">重置狀態</button></div>
       </div>
       <div class="phone"><div class="screen">
         <div class="pill"><span class="dot"></span><span id="modeName">日常模式</span></div>
         <h2>AI 家庭中控台</h2>
-        <p style="color:var(--muted)">目前為模擬控制，正式版可串接 Home Assistant、ESP32、Google Sheet 或雲端資料庫。</p>
+        <p class="muted">目前為商業簡報用模擬控制。正式版可串接 Home Assistant、ESP32、紅外線發射器、繼電器與手機 GPS。</p>
         <div class="status"><span>燈光</span><b id="miniLight">客廳 70%</b></div>
         <div class="status"><span>冷氣</span><b id="miniAc">26°C</b></div>
-        <div class="status"><span>門鎖</span><b id="miniLock">已上鎖</b></div>
-        <div class="status"><span>安全</span><b id="miniSecurity">一般監測</b></div>
+        <div class="status"><span>窗簾</span><b id="miniCurtain">半開</b></div>
+        <div class="status"><span>熱水器</span><b id="miniHeater">待機</b></div>
         <div class="status"><span>節能分數</span><b id="miniEnergy">78 / 100</b></div>
       </div></div>
     </div>
@@ -40,18 +40,20 @@
 
   <main>
     <section id="dashboard" class="wrap">
-      <div class="head"><h2>App 控制台</h2><p>使用情境按鈕或自然語言模擬 HomeJarvis 代理控制家庭設備。</p></div>
+      <div class="head"><h2>App 控制台</h2><p>已加入你指定的兩個重點情境：夏季極致省電、健身房返家預冷。</p></div>
       <div class="grid2">
         <div class="card">
           <h3>情境控制</h3>
           <div class="sceneGrid">
+            <button class="scene" onclick="runScene('summer')">☀️ 夏季極致省電<br><small>西曬＋高電價，自動窗簾、冷氣、循環扇聯動</small></button>
+            <button class="scene" onclick="runScene('gym')">🏋️ 健身返家預冷<br><small>GPS 判斷返家，冷氣預冷＋熱水器加熱</small></button>
             <button class="scene" onclick="runScene('home')">🏠 我回家了<br><small>開燈、調溫、解除離家模式</small></button>
             <button class="scene" onclick="runScene('sleep')">🌙 我要睡了<br><small>關燈、上鎖、夜間監測</small></button>
             <button class="scene" onclick="runScene('out')">🚪 我出門了<br><small>關閉設備、啟動警戒</small></button>
-            <button class="scene" onclick="runScene('save')">⚡ 省電模式<br><small>降低耗電、維持舒適</small></button>
+            <button class="scene" onclick="runScene('save')">⚡ 一般省電<br><small>降低耗電、維持舒適</small></button>
           </div>
           <h3>自然語言指令</h3>
-          <input id="commandInput" placeholder="例如：客人來了，幫我把客廳調舒服一點" />
+          <input id="commandInput" placeholder="例如：下午電價高又西曬，幫我進入最省電模式" />
           <button class="btn small" onclick="runCommand()">送出指令</button>
           <div class="log" id="aiLog">系統待命中...\n請選擇情境，或輸入一句家庭需求。</div>
         </div>
@@ -61,11 +63,21 @@
             <div class="device"><div class="deviceTop"><b>燈光</b><span id="lightState" class="state">客廳 70%</span></div><div class="bar"><i id="lightBar" style="width:70%"></i></div></div>
             <div class="device"><div class="deviceTop"><b>冷氣</b><span id="acState" class="state">26°C 舒適</span></div><div class="bar"><i id="acBar" style="width:60%"></i></div></div>
             <div class="device"><div class="deviceTop"><b>窗簾</b><span id="curtainState" class="state">半開</span></div><div class="bar"><i id="curtainBar" style="width:50%"></i></div></div>
-            <div class="device"><div class="deviceTop"><b>門鎖</b><span id="lockState" class="state">已上鎖</span></div><div class="bar"><i id="lockBar" style="width:100%"></i></div></div>
-            <div class="device"><div class="deviceTop"><b>安全</b><span id="securityState" class="state">一般監測</span></div><div class="bar"><i id="securityBar" style="width:55%"></i></div></div>
+            <div class="device"><div class="deviceTop"><b>循環扇</b><span id="fanState" class="state">待機</span></div><div class="bar"><i id="fanBar" style="width:20%"></i></div></div>
+            <div class="device"><div class="deviceTop"><b>熱水器</b><span id="heaterState" class="state">待機</span></div><div class="bar"><i id="heaterBar" style="width:20%"></i></div></div>
             <div class="device"><div class="deviceTop"><b>節能</b><span id="energyState" class="state">平衡</span></div><div class="bar"><i id="energyBar" style="width:78%"></i></div></div>
           </div>
+          <p class="warn">安全備註：熱水器與高功率繼電器屬高風險設備，正式商品需由合格人員安裝，並加入過熱、漏電、斷電保護。</p>
         </div>
+      </div>
+    </section>
+
+    <section id="plans" class="wrap">
+      <div class="head"><h2>產品方案與定價</h2><p>我把價格調成比較適合簡報與市場定位的版本：比傳統全屋換新低很多，但仍保留硬體與服務毛利。</p></div>
+      <div class="grid3">
+        <div class="card"><span class="badge">B2C 硬體販售</span><h3>方案一：極客 DIY 升級包</h3><div class="planPrice">NT$8,800 起</div><p class="muted">提供燒錄好的中樞大腦、紅外線控制模組、邊端改造模組與安裝教學。DIY 玩家可單買配件，不被同捆包綁住。</p><ul class="muted"><li>中樞主機與基本模組</li><li>冷氣紅外線控制</li><li>循環扇 / 感測器擴充</li><li>配件單購：NT$490～1,990</li></ul></div>
+        <div class="card"><span class="badge">高毛利服務</span><h3>方案二：全屋智能到府改造</h3><div class="planPrice">NT$39,800 起</div><p class="muted">專人到府評估、舊家電電路改裝、AI 語音劇本客製化。相比動輒 20 萬以上的全套換新方案，價格更有攻擊性。</p><ul class="muted"><li>基礎三房兩廳評估</li><li>舊冷氣 / 窗簾 / 照明整合</li><li>安全繼電器與保護機制</li><li>客製化家庭劇本</li></ul></div>
+        <div class="card"><span class="badge">SaaS 訂閱</span><h3>方案三：HomeJarvis AI 秘書</h3><div class="planPrice">NT$399/月 起</div><p class="muted">入門版降低訂閱門檻；進階家庭版 NT$599/月、年費 NT$5,990 起，適合需要行程、待辦、家庭記事、智慧搜尋與生活建議的家庭。</p><ul class="muted"><li>Basic：NT$399/月、NT$3,990/年</li><li>Pro：NT$599/月、NT$5,990/年</li><li>家庭記事與待辦提醒</li><li>智慧搜尋與生活建議</li></ul></div>
       </div>
     </section>
 
@@ -76,8 +88,8 @@
           <label>姓名</label><input id="leadName" placeholder="例如：王先生">
           <label>聯絡方式</label><input id="leadContact" placeholder="電話、Email 或 Line ID">
           <label>住宅類型</label><input id="leadHome" placeholder="例如：三房兩廳、租屋套房、透天">
-          <label>預算</label><input id="leadBudget" placeholder="例如：1 萬以內、2～3 萬">
-          <label>最想自動化的情境</label><textarea id="leadNeed" placeholder="例如：睡前自動關燈、出門檢查門鎖、長輩異常提醒"></textarea>
+          <label>預算</label><input id="leadBudget" placeholder="例如：1 萬以內、4 萬左右">
+          <label>最想自動化的情境</label><textarea id="leadNeed" placeholder="例如：夏季省電、返家預冷、睡前關燈、出門檢查門鎖"></textarea>
           <button class="btn" onclick="saveLead()">保存需求</button>
         </div>
         <div class="card">
@@ -89,20 +101,21 @@
     </section>
 
     <section id="pricing" class="wrap">
-      <div class="head"><h2>估價器</h2><p>用來展示 HomeJarvis 的初步收費邏輯：主機、AI 會員、安裝服務與房間擴充。</p></div>
+      <div class="head"><h2>方案估價器</h2><p>依照方案、房間數、安裝方式與 AI 訂閱估算第一年費用。</p></div>
       <div class="grid2">
         <div class="card">
+          <label>購買方案</label><select id="productPlan" onchange="calcPrice()"><option value="diy">方案一：極客 DIY 升級包 NT$8,800 起</option><option value="whole">方案二：全屋智能到府改造 NT$39,800 起</option></select>
           <label>房間數</label><input id="rooms" type="number" min="1" value="3" oninput="calcPrice()">
-          <label>會員方案</label><select id="plan" onchange="calcPrice()"><option value="2400">年繳 AI 會員 NT$2,400</option><option value="200">月繳 AI 會員 NT$200</option></select>
-          <label>安裝方案</label><select id="install" onchange="calcPrice()"><option value="0">自行安裝</option><option value="2500">基礎安裝 NT$2,500</option><option value="6000">進階整合 NT$6,000</option></select>
+          <label>AI 秘書訂閱</label><select id="aiPlan" onchange="calcPrice()"><option value="0">暫不訂閱</option><option value="3990">Basic 年費 NT$3,990</option><option value="5990">Pro 年費 NT$5,990</option></select>
+          <label>DIY 安裝協助</label><select id="install" onchange="calcPrice()"><option value="0">自行安裝 / 全屋方案已含評估</option><option value="2500">DIY 遠端協助 NT$2,500</option><option value="6000">DIY 到府協助 NT$6,000</option></select>
         </div>
-        <div class="card"><h3>第一年估算費用</h3><div class="price" id="priceResult">NT$ 7,900</div><p id="priceDetail" style="color:var(--muted)"></p><p style="color:var(--muted)">報告時可說：營收 = 主機銷售 + AI 訂閱 + 安裝服務，未來靠會員訂閱提高長期營收。</p></div>
+        <div class="card"><h3>第一年估算費用</h3><div class="price" id="priceResult">NT$ 8,800</div><p id="priceDetail" class="muted"></p><p class="muted">報告時可說：一次性收入來自硬體與到府改造；長期收入靠 AI 秘書訂閱，提高 5 年內盈利機率。</p></div>
       </div>
     </section>
 
     <section id="market" class="wrap">
-      <div class="head"><h2>市場定位</h2><p>HomeJarvis 的核心不是單一設備，而是「家庭 AI 代理」。</p></div>
-      <div class="card" style="overflow:auto"><table><thead><tr><th>項目</th><th>一般智慧音箱</th><th>智慧家庭套件</th><th>傳統弱電工程</th><th>HomeJarvis</th></tr></thead><tbody><tr><td>價格門檻</td><td>低</td><td>中</td><td>高</td><td><b>低成本主機切入</b></td></tr><tr><td>自然語言</td><td>基礎語音</td><td>多為規則</td><td>依專案而定</td><td><b>AI 理解家庭任務</b></td></tr><tr><td>代理流程</td><td>單點控制</td><td>需手動設定</td><td>客製成本高</td><td><b>一句話拆解多步驟</b></td></tr><tr><td>商業價值</td><td>硬體銷售</td><td>設備生態</td><td>工程費</td><td><b>主機 + 會員 + 安裝</b></td></tr></tbody></table></div>
+      <div class="head"><h2>市場定位</h2><p>HomeJarvis 的核心不是單一設備，而是「舊家電改造 + AI 情境代理 + 訂閱服務」。</p></div>
+      <div class="card" style="overflow:auto"><table><thead><tr><th>項目</th><th>一般智慧音箱</th><th>智慧家庭套件</th><th>傳統全屋換新</th><th>HomeJarvis</th></tr></thead><tbody><tr><td>價格門檻</td><td>低，但功能有限</td><td>中，需要同品牌生態</td><td>常見 20 萬以上</td><td><b>DIY 8,800 起，全屋 39,800 起</b></td></tr><tr><td>舊家電相容</td><td>弱</td><td>普通</td><td>多半要求換新</td><td><b>主打舊冷氣、熱水器、窗簾改造</b></td></tr><tr><td>自然語言</td><td>基礎語音</td><td>多為規則</td><td>依專案而定</td><td><b>AI 理解家庭任務</b></td></tr><tr><td>商業價值</td><td>硬體銷售</td><td>設備生態</td><td>工程費</td><td><b>硬體 + 到府服務 + SaaS</b></td></tr></tbody></table></div>
     </section>
   </main>
 
@@ -111,27 +124,29 @@
 
   <script>
     const scenes={
-      home:{mode:'回家模式',light:'玄關與客廳 85%',ac:'25°C 快速舒適',curtain:'打開',lock:'已解鎖',security:'家人模式',energy:'舒適優先',bars:[85,68,90,20,45,62],log:`收到：我回家了\nAI 判斷：使用者進入家門，需要照明與舒適溫度。\n代理執行：開啟玄關燈與客廳燈、冷氣調整至 25°C、安全模式改為家人模式。`},
-      sleep:{mode:'睡眠模式',light:'臥室 20%',ac:'27°C 睡眠風',curtain:'關閉',lock:'已上鎖',security:'夜間監測',energy:'安靜省電',bars:[20,45,0,100,88,86],log:`收到：我要睡了\nAI 判斷：需要降低干擾、確認安全、節省能源。\n代理執行：關閉客廳燈、臥室燈調暗、窗簾關閉、確認門鎖、啟動夜間監測。`},
-      out:{mode:'離家模式',light:'全部關閉',ac:'關閉',curtain:'關閉',lock:'已上鎖',security:'離家警戒',energy:'最大省電',bars:[0,0,0,100,100,96],log:`收到：我出門了\nAI 判斷：家庭無人，需要安全與節能。\n代理執行：關閉非必要家電、確認門鎖、啟動離家警戒、保留必要感測器。`},
-      save:{mode:'省電模式',light:'必要照明 35%',ac:'28°C 節能',curtain:'依日照調整',lock:'已上鎖',security:'一般監測',energy:'省電優先',bars:[35,35,60,100,60,93],log:`收到：省電模式\nAI 判斷：降低耗電但維持基本舒適。\n代理執行：燈光降至 35%、冷氣調整至 28°C、窗簾依日照調整。`}
+      summer:{mode:'夏季極致省電',light:'自然光優先',ac:'舊冷氣 +2°C',curtain:'西曬側全關',fan:'循環扇開啟',heater:'待機',energy:'極致省電',bars:[30,48,100,85,15,96],log:`情境：夏季極致省電模式\nAI 判斷：下午尖峰電價 + 西曬嚴重，若只降低冷氣溫度會造成高耗電。\n代理執行：放下西曬側電動窗簾、舊冷氣調高 2 度、開啟循環扇。\n結果：體感溫度維持接近不變，但冷氣壓縮機負載下降，耗電量明顯降低。`},
+      gym:{mode:'健身返家預冷',light:'玄關待命',ac:'24°C 預冷',curtain:'半開',fan:'低速循環',heater:'熱水器加熱中',energy:'返家舒適',bars:[45,80,50,55,90,68],log:`情境：地理柵欄返家預冷\nAI 判斷：手機 GPS 顯示使用者離開常去健身房，且移動方向往住處。預計 15 分鐘後抵達。\n代理執行：紅外線啟動舊冷氣至 24°C 預冷，並接通具安全保護的高功率繼電器讓熱水器加熱。\n結果：推開家門時，室溫剛好舒適，洗澡水也剛好加熱完畢。`},
+      home:{mode:'回家模式',light:'玄關與客廳 85%',ac:'25°C 快速舒適',curtain:'打開',fan:'低速循環',heater:'待機',energy:'舒適優先',bars:[85,68,90,35,20,62],log:`收到：我回家了\nAI 判斷：使用者進入家門，需要照明與舒適溫度。\n代理執行：開啟玄關燈與客廳燈、冷氣調整至 25°C、安全模式改為家人模式。`},
+      sleep:{mode:'睡眠模式',light:'臥室 20%',ac:'27°C 睡眠風',curtain:'關閉',fan:'靜音循環',heater:'待機',energy:'安靜省電',bars:[20,45,0,28,20,86],log:`收到：我要睡了\nAI 判斷：需要降低干擾、確認安全、節省能源。\n代理執行：關閉客廳燈、臥室燈調暗、窗簾關閉、確認門鎖、啟動夜間監測。`},
+      out:{mode:'離家模式',light:'全部關閉',ac:'關閉',curtain:'關閉',fan:'關閉',heater:'斷電',energy:'最大省電',bars:[0,0,0,0,0,98],log:`收到：我出門了\nAI 判斷：家庭無人，需要安全與節能。\n代理執行：關閉非必要家電、確認門鎖、啟動離家警戒、保留必要感測器。`},
+      save:{mode:'一般省電',light:'必要照明 35%',ac:'28°C 節能',curtain:'依日照調整',fan:'低速循環',heater:'待機',energy:'省電優先',bars:[35,35,60,45,20,93],log:`收到：一般省電模式\nAI 判斷：降低耗電但維持基本舒適。\n代理執行：燈光降至 35%、冷氣調整至 28°C、窗簾依日照調整。`}
     };
     const $=id=>document.getElementById(id);
     function toast(msg){const t=$('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',2200)}
-    function setScene(data){$('modeName').textContent=data.mode;['light','ac','curtain','lock','security','energy'].forEach(k=>$(k+'State').textContent=data[k]);$('miniLight').textContent=data.light;$('miniAc').textContent=data.ac;$('miniLock').textContent=data.lock;$('miniSecurity').textContent=data.security;$('miniEnergy').textContent=data.bars[5]+' / 100';['lightBar','acBar','curtainBar','lockBar','securityBar','energyBar'].forEach((id,i)=>$(id).style.width=data.bars[i]+'%');$('aiLog').textContent=data.log;localStorage.setItem('hj_scene',JSON.stringify(data));}
+    function setScene(data){$('modeName').textContent=data.mode;['light','ac','curtain','fan','heater','energy'].forEach(k=>$(k+'State').textContent=data[k]);$('miniLight').textContent=data.light;$('miniAc').textContent=data.ac;$('miniCurtain').textContent=data.curtain;$('miniHeater').textContent=data.heater;$('miniEnergy').textContent=data.bars[5]+' / 100';['lightBar','acBar','curtainBar','fanBar','heaterBar','energyBar'].forEach((id,i)=>$(id).style.width=data.bars[i]+'%');$('aiLog').textContent=data.log;localStorage.setItem('hj_scene',JSON.stringify(data));}
     function runScene(name){setScene(scenes[name]);toast('已切換：'+scenes[name].mode)}
-    function runCommand(){const text=$('commandInput').value.trim();if(!text){$('aiLog').textContent='請先輸入一句自然語言指令。';return}if(/睡|晚安|休息/.test(text))return runScene('sleep');if(/出門|離開|上班|上課/.test(text))return runScene('out');if(/省電|電費|節能/.test(text))return runScene('save');if(/客人|朋友|聚會/.test(text)){return setScene({mode:'訪客模式',light:'客廳 90% 暖光',ac:'25°C 迎賓',curtain:'打開',lock:'已上鎖',security:'訪客模式',energy:'舒適優先',bars:[90,70,90,100,55,70],log:`收到：${text}\nAI 拆解：偵測到「客人」與「氣氛」需求。\n代理執行：客廳暖光 90%、冷氣 25°C、窗簾打開、維持門鎖安全。`})}setScene({mode:'自訂代理模式',light:'依需求調整',ac:'智慧調整',curtain:'智慧判斷',lock:'已檢查',security:'一般監測',energy:'平衡',bars:[65,60,55,100,62,75],log:`收到：${text}\nAI 拆解：辨識使用者需求，轉換成家庭設備流程。\n代理執行：調整燈光、確認安全狀態、依舒適與節能平衡控制設備。`})}
+    function runCommand(){const text=$('commandInput').value.trim();if(!text){$('aiLog').textContent='請先輸入一句自然語言指令。';return}if(/西曬|夏季|電價|尖峰|最省電|省電/.test(text))return runScene('summer');if(/健身|GPS|地理|回家預冷|熱水|洗澡/.test(text))return runScene('gym');if(/睡|晚安|休息/.test(text))return runScene('sleep');if(/出門|離開|上班|上課/.test(text))return runScene('out');if(/回家|到家/.test(text))return runScene('home');setScene({mode:'自訂代理模式',light:'依需求調整',ac:'智慧調整',curtain:'智慧判斷',fan:'智慧循環',heater:'安全待命',energy:'平衡',bars:[65,60,55,50,25,75],log:`收到：${text}\nAI 拆解：辨識使用者需求，轉換成家庭設備流程。\n代理執行：調整燈光、冷氣、窗簾、循環扇與安全狀態。`})}
     function getLeads(){return JSON.parse(localStorage.getItem('hj_leads')||'[]')}
-    function renderLeads(){const box=$('leadList');const leads=getLeads();if(!leads.length){box.innerHTML='<p style="color:var(--muted)">目前沒有保存資料。</p>';return}box.innerHTML=leads.map((x,i)=>`<div class="record"><b>${i+1}. ${escapeHtml(x.name)}</b><br>聯絡：${escapeHtml(x.contact)}<br>住宅：${escapeHtml(x.home)}｜預算：${escapeHtml(x.budget)}<br>需求：${escapeHtml(x.need)}<br><small>${x.time}</small></div>`).join('')}
+    function renderLeads(){const box=$('leadList');const leads=getLeads();if(!leads.length){box.innerHTML='<p class="muted">目前沒有保存資料。</p>';return}box.innerHTML=leads.map((x,i)=>`<div class="record"><b>${i+1}. ${escapeHtml(x.name)}</b><br>聯絡：${escapeHtml(x.contact)}<br>住宅：${escapeHtml(x.home)}｜預算：${escapeHtml(x.budget)}<br>需求：${escapeHtml(x.need)}<br><small>${x.time}</small></div>`).join('')}
     function saveLead(){const lead={name:$('leadName').value.trim()||'未填姓名',contact:$('leadContact').value.trim()||'未填',home:$('leadHome').value.trim()||'未填',budget:$('leadBudget').value.trim()||'未填',need:$('leadNeed').value.trim()||'未填',time:new Date().toLocaleString('zh-TW')};const leads=getLeads();leads.unshift(lead);localStorage.setItem('hj_leads',JSON.stringify(leads));['leadName','leadContact','leadHome','leadBudget','leadNeed'].forEach(id=>$(id).value='');renderLeads();toast('已保存客戶需求')}
     function clearLeads(){if(confirm('確定清空所有客戶資料？')){localStorage.removeItem('hj_leads');renderLeads();toast('已清空')}}
     function exportCSV(){const leads=getLeads();if(!leads.length){toast('沒有資料可匯出');return}const header=['姓名','聯絡方式','住宅類型','預算','需求','時間'];const rows=leads.map(x=>[x.name,x.contact,x.home,x.budget,x.need,x.time]);const csv=[header,...rows].map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\n');const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='HomeJarvis_客戶需求.csv';a.click();URL.revokeObjectURL(url)}
     function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
-    function calcPrice(){const rooms=Number($('rooms').value||1);const plan=Number($('plan').value);const install=Number($('install').value);const host=5500;const roomAddon=Math.max(0,rooms-3)*800;const total=host+plan+install+roomAddon;$('priceResult').textContent='NT$ '+total.toLocaleString('zh-TW');$('priceDetail').textContent=`主機 5,500 + 會員 ${plan.toLocaleString('zh-TW')} + 安裝 ${install.toLocaleString('zh-TW')} + 房間擴充 ${roomAddon.toLocaleString('zh-TW')}`}
-    function resetDemo(){localStorage.removeItem('hj_scene');runScene('home');toast('已重置 App 狀態')}
+    function calcPrice(){const plan=$('productPlan').value;const rooms=Number($('rooms').value||1);const ai=Number($('aiPlan').value);const install=Number($('install').value);const base=plan==='whole'?39800:8800;const roomAddon=Math.max(0,rooms-3)*(plan==='whole'?3000:1200);const installCost=plan==='whole'?0:install;const total=base+roomAddon+ai+installCost;$('priceResult').textContent='NT$ '+total.toLocaleString('zh-TW');$('priceDetail').textContent=`${plan==='whole'?'全屋智能到府改造':'極客 DIY 升級包'} ${base.toLocaleString('zh-TW')} + 房間擴充 ${roomAddon.toLocaleString('zh-TW')} + AI 訂閱 ${ai.toLocaleString('zh-TW')} + 安裝協助 ${installCost.toLocaleString('zh-TW')}`}
+    function resetDemo(){localStorage.removeItem('hj_scene');runScene('summer');toast('已重置 App 狀態')}
     let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;$('installBtn').hidden=false});$('installBtn').addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;$('installBtn').hidden=true});
     if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}))}
-    try{const saved=JSON.parse(localStorage.getItem('hj_scene')||'null');if(saved)setScene(saved);else setScene(scenes.home)}catch{setScene(scenes.home)}calcPrice();renderLeads();
+    try{const saved=JSON.parse(localStorage.getItem('hj_scene')||'null');if(saved)setScene(saved);else setScene(scenes.summer)}catch{setScene(scenes.summer)}calcPrice();renderLeads();
   </script>
 </body>
 </html>
