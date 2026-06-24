@@ -1,0 +1,20 @@
+{
+  "name": "HomeJarvis 家庭賈維斯",
+  "short_name": "HomeJarvis",
+  "description": "第八組 AI 商業創新專題：智慧管家 2.0 可安裝 PWA Demo",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#071416",
+  "theme_color": "#42e6b1",
+  "lang": "zh-Hant-TW",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
