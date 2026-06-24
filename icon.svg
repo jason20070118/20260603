@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#071416"/>
+  <circle cx="256" cy="256" r="176" fill="#42e6b1" opacity="0.18"/>
+  <path d="M144 274 256 142l112 132v130a22 22 0 0 1-22 22H166a22 22 0 0 1-22-22V274Z" fill="#42e6b1"/>
+  <path d="M202 302c0-31 24-56 54-56s54 25 54 56v124H202V302Z" fill="#071416" opacity="0.86"/>
+  <path d="M176 264h160" stroke="#071416" stroke-width="28" stroke-linecap="round" opacity="0.72"/>
+  <text x="256" y="342" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="900" fill="#42e6b1">HJ</text>
+</svg>
